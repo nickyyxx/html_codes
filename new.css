@@ -1,0 +1,57 @@
+body {
+    font-family: cursive;
+    background: linear-gradient(to right, beige, beige); /* Deep Blue Gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+.text {
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    width: 100%;
+    padding: 20px;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.first-text { color: #f1c40f; animation: fadeInOut 5s ease-in-out 0s infinite; } /* Gold */
+.second-text { color: #000000; animation: fadeInOut 5s ease-in-out 5s infinite; } /* Soft White */
+.third-text { color: #f39c12; animation: fadeInOut 5s ease-in-out 10s infinite; } /* Warm Gold */
+.fourth-text { color: #696969; animation: fadeInOut 5s ease-in-out 15s infinite; } /* Sky Blue */
+.fifth-text { color: #bdb76b; animation: fadeInOut 5s ease-in-out 20s infinite; } /* Soft Pink */
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    25% { opacity: 1; transform: translateY(0px); }
+    75% { opacity: 1; transform: translateY(0px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
